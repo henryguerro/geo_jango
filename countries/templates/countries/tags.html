@@ -1,13 +1,9 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'countries/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {% include 'countries/home.html' %}
     <h1>Template Tags</h1>
     -<p>comment:</p>{% comment %} This is comment {% endcomment %}
     -<p>lorem: {% lorem %}</p>
@@ -18,6 +14,4 @@
     -<p>Filter: {% filter force_escape|lower %} %^&%^&#$% TEXT {% endfilter %}</p>
     -<p>capfirst: {{ "PRUEBA"|capfirst }}</p>
     -<p>divisibleby: {% if population|divisibleby:"3" %} do {% endif %}</p>
-
-</body>
-</html>
+{% endblock  %}
