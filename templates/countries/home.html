@@ -8,6 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>jueeee</h1>
+    {% for country in countries %}
+        <li>{{ country.name }}</li>
+    {% endfor %}
 </body>
 </html>
