@@ -3,7 +3,8 @@
 		<h2 style="padding-right: 3px">{{ continent.name|title }} </h2>
 	</div>
 	<div style="display: inline-block; width: 100%">
-		<p>Traduccion: {{ continent.translate|capfirst }}</p>
+		<p>Traduccion: {{ continent.translation|capfirst }}</p>
 		Color: <div style="background-color: {{continent.color}};width: 99%;height: 10px;display: inline-block;"></div>
+        <a href="{{ continent.url_detail }}">Ir a Country con id 1</a>
 	</div>
 </div>

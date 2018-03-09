@@ -19,8 +19,9 @@ from countries.views import HomeView, TagsView
 from continents.views import ContinentsView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", HomeView.as_view()),
-    path("tags/", TagsView.as_view()),
-    path("continents/", ContinentsView.as_view())
+    path('admin/', admin.site.urls, name='admin.index'),
+    path("", HomeView.as_view(), name='home'),
+    path("tags/", TagsView.as_view(), name='tags.index'),
+    path("continents/", ContinentsView.as_view(), name='continents.index'),
+    path("continents/<int:id>", ContinentsView.as_view(), name='continents.detail')
 ]

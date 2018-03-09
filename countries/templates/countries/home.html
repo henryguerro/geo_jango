@@ -3,7 +3,15 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+    <ul>
+        <li><a href="{% url 'tags.index' %}">Tags</a></li>
+        <li><a href="{% url 'continents.index' %}">Continents</a></li>
+    </ul>
     {% for country in countries %}
-        <li>{{ country.name }}</li>
+        <h1><li>{{ country.name }}</li></h1>
+        <ul>
+            <li>{{ country.code }}</li>
+            <li><a href="{{ country.url_detail }}">Detalle de [{{ country.id }}]</a></li>
+        </ul>
     {% endfor %}
 {% endblock  %}
