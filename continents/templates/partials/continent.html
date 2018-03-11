@@ -5,6 +5,6 @@
 	<div style="display: inline-block; width: 100%">
 		<p>Traduccion: {{ continent.translation|capfirst }}</p>
 		Color: <div style="background-color: {{continent.color}};width: 99%;height: 10px;display: inline-block;"></div>
-        <a href="{{ continent.url_detail }}">Ir a Country con id 1</a>
+        <a href="{% url 'continents.detail' continent.id %}">Detail[{{ continent.pk }}]</a>
 	</div>
 </div>

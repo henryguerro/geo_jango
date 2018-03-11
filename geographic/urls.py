@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from countries.views import HomeView, TagsView
-from continents.views import ContinentsView
+from countries.views import HomeView, CountriesSearchView, CountryIdDetailView
+from continents.views import ContinentsView, ContinentsDetailView
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin.index'),
-    path("", HomeView.as_view(), name='home'),
-    path("tags/", TagsView.as_view(), name='tags.index'),
+    path("", HomeView.as_view(), name='countries.index'),
+    path("countries/", HomeView.as_view(), name='countries.index'),
+    path("countries/<int:id>", CountryIdDetailView.as_view(), name='countries.detail'),
+    path("countries/search/<query>", CountriesSearchView.as_view(), name='countries.search'),
     path("continents/", ContinentsView.as_view(), name='continents.index'),
-    path("continents/<int:id>", ContinentsView.as_view(), name='continents.detail')
+    path("continents/<int:pk>", ContinentsDetailView.as_view(), name='continents.detail')
 ]
