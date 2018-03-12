@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from countries.views import HomeView, CountriesSearchView, CountryIdDetailView
 from continents.views import ContinentsView, ContinentsDetailView
 
@@ -25,5 +25,6 @@ urlpatterns = [
     path("countries/<int:id>", CountryIdDetailView.as_view(), name='countries.detail'),
     path("countries/search/<query>", CountriesSearchView.as_view(), name='countries.search'),
     path("continents/", ContinentsView.as_view(), name='continents.index'),
-    path("continents/<int:pk>", ContinentsDetailView.as_view(), name='continents.detail')
+    path("continents/<int:pk>", ContinentsDetailView.as_view(), name='continents.detail'),
+    path('people/', include('people.urls'))
 ]
