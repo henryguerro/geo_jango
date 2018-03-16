@@ -21,10 +21,8 @@ from continents.views import ContinentsView, ContinentsDetailView
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin.index'),
     path("", HomeView.as_view(), name='countries.index'),
-    path("countries/", HomeView.as_view(), name='countries.index'),
-    path("countries/<int:id>", CountryIdDetailView.as_view(), name='countries.detail'),
-    path("countries/search/<query>", CountriesSearchView.as_view(), name='countries.search'),
+    path('people/', include('people.urls')),
+    path('countries/', include('countries.urls')),
     path("continents/", ContinentsView.as_view(), name='continents.index'),
     path("continents/<int:pk>", ContinentsDetailView.as_view(), name='continents.detail'),
-    path('people/', include('people.urls'))
 ]

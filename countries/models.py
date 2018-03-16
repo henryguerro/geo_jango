@@ -8,9 +8,9 @@ class ActiveManager(models.Manager):
 
 class Country(models.Model):
     CODE_CHOICES = (
-        ('Colombia', 'co'),
-        ('Argentina', 'ar'),
-        ('Venezuela', 've')
+        ('CO', 'colombia'),
+        ('AR', 'argentina'),
+        ('USA', 'Estados Unidos')
     )
 
     name = models.CharField(max_length=255)

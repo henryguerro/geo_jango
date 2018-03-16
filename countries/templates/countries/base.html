@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Geographic{% endblock %}</title>
+    <style media="screen">
+        div.a {
+            background-color: lightblue;
+        }
+
+        div.b {
+            background-color: lightpink;
+        }
+    </style>
 </head>
 <body>
+    <div class="{{ request.session.testab }}">
     {% block content %}
     {% endblock %}
+    </div>
 </body>
 </html>
